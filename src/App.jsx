@@ -4,13 +4,14 @@ import AddCreator from './pages/AddCreator'
 import EditCreator from './pages/EditCreator'
 import ShowCreator from './pages/ShowCreator'
 import ViewCreator from './pages/ViewCreator'
+import CreatorForm from './components/CreatorForm'
 import './App.css'
 
 function AppRoutes() {
   const routes = useRoutes([
     {path: '/', element: <Home />},
-    {path: '/add', element: <AddCreator />},
-    {path: '/edit/:name', element: <EditCreator />},
+    {path: '/add', element: <CreatorForm />},
+    {path: '/edit/:name', element: <CreatorForm />},
     {path: 'view/:name', element: <ViewCreator />},
     {path: '/show/:name', element: <ShowCreator />},
   ])
