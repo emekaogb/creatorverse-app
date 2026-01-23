@@ -1,33 +1,12 @@
-import { supabase } from "../client";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Card from "../components/Card";
 
 
 function ViewCreator() {
-    const [creator, setCreator] = useState([]);
-    const { name } = useParams();
+    const location = useLocation();
+    const { creator } = location.state || {};
 
-    useEffect(() => {
-        async function getCreators() {
-            const { data, error } = await supabase
-                .from('creators')
-                .select('*')
-                .eq('name', name)
-                .single();
-
-            if (error) {
-                console.error(error)
-                return
-            }
-
-            setCreator(data);
-        }
-
-        getCreators()
-    }, [name]);
-
-    if (!creator) return <div>Loading...</div>
+    if (!creator) return <div>No creator selected.</div>
     //const { dummy, description, url, imageURL } = creator;
 
     // Some sort of display HTML
@@ -46,6 +25,10 @@ function ViewCreator() {
             <a href={creator.url} target="_blank" rel="noreferrer">
                 Visit Creator
             </a>
+
+            <Link to={`/edit/${creator.name}`} state={{creator}} className="edit-link-wrapper">
+                <button>Edit</button>
+            </Link>
         </div>
     )
 }

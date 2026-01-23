@@ -11,7 +11,7 @@ function AppRoutes() {
   const routes = useRoutes([
     {path: '/', element: <Home />},
     {path: '/add', element: <CreatorForm />},
-    {path: '/edit/:name', element: <CreatorForm />},
+    {path: '/edit/:name', element: <EditCreator />},
     {path: 'view/:name', element: <ViewCreator />},
     {path: '/show/:name', element: <ShowCreator />},
   ])
