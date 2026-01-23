@@ -10,6 +10,9 @@ function Card({ creator }) {
                 <h2 className="card-title">{name}</h2>
                 {description && <p className="class_desc">{description}</p>}
             </Link>
+            <Link to={`/edit/${name}`} className="edit-link-wrapper">
+                <button>Edit</button>
+            </Link>
             {url && <a href={url} className="card-link">Visit</a>}
         </div>
     );

@@ -24,7 +24,7 @@ function Home() {
     getCreators()
   }, [])
 
-  if (!creators.length) return <p>No creators</p>;
+  if (!creators.length) return <p>Loading...</p>;
 
   return (
     <>
