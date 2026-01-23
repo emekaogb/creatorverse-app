@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "../client";
 
 function CreatorForm({ creator }) {
-    const initialName = creator?.name || ""
     const navigate = useNavigate();
 
     // Form state
@@ -20,7 +19,7 @@ function CreatorForm({ creator }) {
             const { error } = await supabase
                 .from("creators")
                 .update({ name, url, description, imageURL })
-                .eq("name", initialName)
+                .eq("name", creator.name)
             
             if (error) {
                 console.error(error)
@@ -39,6 +38,26 @@ function CreatorForm({ creator }) {
         navigate("/")
     }
 
+    async function handleDelete() {
+        const confirmed = window.confirm(
+            `Are you sure you want to delete ${creator.name}?`
+        )
+        if (!confirmed) return;
+
+        const { error } = await supabase
+            .from("creators")
+            .delete()
+            .eq("name", creator.name)
+
+        if (error) {
+            console.error(error)
+            alert("Failed to delete creator.")
+            return;
+        }
+
+        navigate("/");
+    }
+
     return (
         <div className="creator-form">
             <h2>{creator ? "Edit Creator" : "Add Creator"}</h2>
@@ -49,6 +68,7 @@ function CreatorForm({ creator }) {
                 <input placeholder="Image URL" value={imageURL} onChange={(e) => setImageURL(e.target.value)} />
 
                 <button type="submit">{creator ? "Update" : "Add"} Creator</button>
+                {creator && <button onClick={handleDelete}>Delete</button>}
             </form>
         </div>
     )
