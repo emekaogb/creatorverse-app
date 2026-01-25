@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import CreatorForm from "../components/CreatorForm";
+import Navbar from "../components/Navbar";
 
 
 function EditCreator() {
@@ -9,7 +10,10 @@ function EditCreator() {
     if (!creator) return <div>No creator selected.</div>
 
     return (
-        <CreatorForm creator={creator} />
+        <div>
+            <Navbar />
+            <CreatorForm creator={creator} />
+        </div> 
     )
 
 }

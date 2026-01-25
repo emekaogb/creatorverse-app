@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import Card from "../components/Card";
+import Navbar from "../components/Navbar";
 
 
 function ViewCreator() {
@@ -12,6 +13,7 @@ function ViewCreator() {
     // Some sort of display HTML
     return (
         <div className="creator-view">
+            <Navbar />
             <h2>{creator.name}</h2>
 
             <img

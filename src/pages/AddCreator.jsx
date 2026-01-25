@@ -1,7 +1,12 @@
+import CreatorForm from "../components/CreatorForm";
+import Navbar from "../components/Navbar";
 
 function AddCreator() {  
     return (
-        <CreatorForm />
+        <div>
+            <Navbar />
+            <CreatorForm />
+        </div> 
     )
 }
 
