@@ -36,7 +36,7 @@ function Home() {
 
       <div>
         <Link to="/add">
-          <button>Add Creator</button>
+          <button className="add-btn">Add</button>
         </Link>
       </div>
     </>

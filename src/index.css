@@ -15,7 +15,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #dcdce4;
   text-decoration: inherit;
 }
 a:hover {
@@ -65,4 +65,131 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  /*width: 100%;*/
+  aspect-ratio: 16 / 9;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  border-radius: 1.5rem;
+  pointer-events: none;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  animation-name: float;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 0.75rem;
+  }
+}
+
+.card-edit-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.card:hover .card-edit-btn {
+  opacity: 1;
+}
+
+.edit-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.add-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.5rem 1 rem rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #4f46e5;
+  animation-name: float;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
