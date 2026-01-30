@@ -8,9 +8,9 @@ import addIcon from "../assets/add_icon.png";
 function Home() {
   const [creators, setCreators] = useState([])
   const location = useLocation();
-  const [showAdd, setShowAdd] = useState(/*!!location.state */false);
+  const [showAdd, setShowAdd] = useState(false);
 
-
+  /* Fetch all creators from the database */
   useEffect(() => {
     async function getCreators() {
       const { data, error } = await supabase
@@ -28,9 +28,10 @@ function Home() {
     getCreators()
   }, [])
 
+  /* Show add button if scrolled to creators */
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 400 /*|| !!location.state*/)  {
+      if (window.scrollY > 400)  {
         setShowAdd(true);
       } else {
         setShowAdd(false);
@@ -42,9 +43,21 @@ function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [])
 
-  if (!creators.length) return <p>Loading...</p>;  
+  /* Scroll to creators if hashed in the link (returning from viewing a single creator) */
+  useEffect(() => {
+    if (location.hash && creators.length > 0) {
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
 
-  
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 50);
+    }
+  }, [location.hash, creators]);
+
+  /* Loading screen if still fetching creators */
+  if (!creators.length) return <p>Loading...</p>;  
 
   return (
     <div className="home-wrapper">
