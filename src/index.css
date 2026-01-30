@@ -96,6 +96,7 @@ button:focus-visible {
   position: relative;
   z-index: 2;
   color: white;
+  font-family: 'Fredoka';
 }
 
 .card::after{
@@ -150,10 +151,14 @@ button:focus-visible {
   }
 }
 
-.card-edit-btn {
+.card-title {
+  font-size: 2rem;
+  text-shadow: 0 0.2rem 0.3rem rgba(102, 102, 102, 0.2);
+}
+
+.card-edit-btn, .card-link {
   position: absolute;
   top: 0.5rem;
-  right: 0.5rem;
   border-radius: 0.5rem;
   padding: 0.25rem;
   background-color: rgba(0, 0, 0, 0.3);
@@ -168,11 +173,19 @@ button:focus-visible {
   transition: opacity 0.1s ease;
 }
 
-.card:hover .card-edit-btn {
+.card-edit-btn {
+  right: 2.8rem;
+}
+
+.card-link {
+  right: 0.5rem;
+}
+
+.card:hover .card-edit-btn, .card:hover .card-link{
   opacity: 1;
 }
 
-.edit-icon {
+.edit-icon, .visit-icon {
   height: 1.5rem;
   aspect-ratio: 1/1;
 }
@@ -206,15 +219,19 @@ button:focus-visible {
 
 .home-wrapper {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: #2a2476;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-.home-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
   background-image: url("https://images.pexels.com/photos/207529/pexels-photo-207529.jpeg");
   background-size: cover;
@@ -281,3 +298,39 @@ button[type="submit"] {
 .full-picture {
   width: 30vw;
 }
+
+@font-face {
+  font-family: 'Fredoka';
+  src: url('./assets/fonts/Fredoka.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.landing {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8vw;
+  font-weight: 500;
+  font-family: Fredoka;
+  user-select: none;
+
+  animation-name: float;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
+  color: rgba(255, 255, 255, 0.7)
+}
+
+.landing-effect {
+  position: absolute;
+  mix-blend-mode: screen;
+  background-size: cover;
+  background-position: center;
+  opacity: 50%;
+  top: -20rem;
+}
+

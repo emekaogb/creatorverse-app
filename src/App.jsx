@@ -1,5 +1,6 @@
 import { BrowserRouter, useRoutes } from 'react-router-dom'
 import Home from './pages/Home'
+import Landing from './pages/Landing'
 import AddCreator from './pages/AddCreator'
 import EditCreator from './pages/EditCreator'
 import ShowCreator from './pages/ShowCreator'

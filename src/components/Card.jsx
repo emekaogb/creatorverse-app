@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import editIcon from "../assets/edit.png";
 import defaultImg from "../assets/default image.png";
+import externalLink from "../assets/external-link.png";
 
 function Card({ creator }) {
     const { name, /*description, */ url, imageURL } = creator;
@@ -15,7 +16,7 @@ function Card({ creator }) {
             <Link to={`/edit/${name}`} state={{creator}} className="edit-link-wrapper">
                 <button className="card-edit-btn"><img src={editIcon} className="edit-icon"/></button>
             </Link>
-            {url && <a href={url} className="card-link">Visit</a>}
+            {url && <a href={url} className="card-link"><img src={externalLink} className="visit-icon"/></a>}
         </div>
     );
 }
