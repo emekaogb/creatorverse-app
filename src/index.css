@@ -75,6 +75,7 @@ button:focus-visible {
   gap: 2rem;
   padding: 2rem;
   width: 100vw;
+  min-height: 100vh;
   box-sizing: border-box;
 }
 
@@ -244,6 +245,7 @@ button:focus-visible {
 .creator-form {
   display: flex;
   justify-content: center;
+  margin-top: 20vh;
 }
 
 form {
@@ -310,19 +312,18 @@ button[type="submit"] {
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction:column;
   justify-content: center;
   align-items: center;
-  font-size: 8vw;
-  font-weight: 500;
   font-family: Fredoka;
-  user-select: none;
 
-  animation-name: float;
+  /*animation-name: float;
   animation-duration: 3s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;*/
 
-  color: rgba(255, 255, 255, 0.7)
+  position: relative;
+  z-index: 2;
 }
 
 .landing-effect {
@@ -332,5 +333,71 @@ button[type="submit"] {
   background-position: center;
   opacity: 50%;
   top: -20rem;
+  z-index: 0;
+} /* animation to make it go low to high opacity */
+
+html {
+  scroll-behavior: smooth;
 }
 
+.edit-link-wrapper {
+  margin: 0.5rem;
+}
+
+.creator-view {
+  margin-top: 20vh;
+}
+
+.view-desc {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  border-radius: 1rem;
+  border: 0.02rem solid black;
+  width: 30vw;
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: inherit;
+  padding: 1vw;
+}
+
+span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  user-select: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 8vw;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.home-icon {
+  width: 1.5em;
+  height: 1.5rem;
+}
+
+.scroll-to-creators {
+  padding-bottom: 0.5rem;
+  color: white;
+  font-size: 1.5rem;
+
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+
+  animation-name: float;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.add-icon {
+  width: 70%;
+}
+
+.down-icon {
+  width: 2rem;
+}

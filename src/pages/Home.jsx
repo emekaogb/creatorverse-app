@@ -3,11 +3,12 @@ import { supabase } from "../client";
 import { Link, useLocation } from "react-router-dom";
 import Card from "../components/Card";
 import Landing from "./Landing";
+import addIcon from "../assets/add_icon.png";
 
 function Home() {
   const [creators, setCreators] = useState([])
   const location = useLocation();
-  const [showAdd, setShowAdd] = useState(!!location.state || false);
+  const [showAdd, setShowAdd] = useState(/*!!location.state */false);
 
 
   useEffect(() => {
@@ -29,7 +30,7 @@ function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 400 || !!location.state)  {
+      if (window.scrollY > 400 /*|| !!location.state*/)  {
         setShowAdd(true);
       } else {
         setShowAdd(false);
@@ -41,7 +42,7 @@ function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [])
 
-  if (!creators.length) return <p>Loading...</p>;
+  if (!creators.length) return <p>Loading...</p>;  
 
   
 
@@ -49,9 +50,9 @@ function Home() {
     <div className="home-wrapper">
       <div className="background"></div>
 
-      {!location.state && <Landing />}
+      <Landing />
 
-      <div className='card-container'>
+      <div id="creators" className='card-container'>
         {creators.map((c) => (
           <Card key={c.name} creator={c} />
         ))}
@@ -59,7 +60,7 @@ function Home() {
 
         {showAdd &&
           <Link to="/add">
-            <button className="add-btn">Add</button>
+            <button className="add-btn"><img src={addIcon} className="add-icon"/></button>
           </Link>
         }
     </div>

@@ -1,4 +1,5 @@
 import Home from "./Home";
+import downIcon from "../assets/down-arrow.png";
 
 function Landing() {
     return (
@@ -7,7 +8,12 @@ function Landing() {
                     <img src="https://megbittonproductions.com/cdn/shop/files/AssetsWebsiteGraphic1_9cda4749-a27c-42df-b000-e6b629c33880.png?v=1716428580"/>
             </div>
             <div className="landing">
-                creatorverse
+                <span className="title">creatorverse</span>
+
+                <div className="scroll-to-creators">
+                    <a href="/#creators">CREATORS</a>
+                    <img src={downIcon} className="down-icon"/>
+                </div>
             </div>  
         </>
     )

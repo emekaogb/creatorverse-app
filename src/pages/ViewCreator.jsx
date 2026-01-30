@@ -16,17 +16,21 @@ function ViewCreator() {
             <Navbar />
             <h2>{creator.name}</h2>
 
-            <img
-                className="picture full-picture"
-                src={creator.imageURL }
-                alt={creator.name}
-                width={300}
-            />
+            <span>
+            <div className="view-desc">
+                <img
+                    className="picture full-picture"
+                    src={creator.imageURL }
+                    alt={creator.name}
+                    width={300}
+                />
 
-            <p>{creator.description}</p>
+                <p>{creator.description}</p>
+            </div>
+            </span>
 
-            <a href={creator.url} target="_blank" rel="noreferrer">
-                Visit Creator
+            <a href={creator.url} target="_blank" rel="noreferrer" className="edit-link-wrapper">
+                <button>Visit Creator</button>
             </a>
 
             <Link to={`/edit/${creator.name}`} state={{creator}} className="edit-link-wrapper">
