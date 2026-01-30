@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #4d4c4c;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,15 +19,17 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #dddeef;
 }
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  height: 100%;
 }
 
 h1 {
@@ -47,7 +49,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #121212;
 }
 button:focus,
 button:focus-visible {
@@ -55,13 +57,13 @@ button:focus-visible {
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+  /*:root {
     color: #213547;
     background-color: #ffffff;
   }
   a:hover {
     color: #747bff;
-  }
+  }*/
   button {
     background-color: #f9f9f9;
   }
@@ -69,18 +71,17 @@ button:focus-visible {
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
   padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100vw;
+  box-sizing: border-box;
 }
 
 .card {
-  /*width: 100%;*/
   aspect-ratio: 16 / 9;
-  flex-direction: column;
-  justify-content: flex-end;
+  /*flex-direction: column;
+  justify-content: flex-end;*/
   border-radius: 1.5rem;
   padding: 1rem;
   position: relative;
@@ -91,16 +92,25 @@ button:focus-visible {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card:hover::after{
+.card-link-wrapper {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.card::after{
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  inset: 0;
+  background-color: rgba(0,0,0,0.1);
   border-radius: 1.5rem;
+  z-index: 1;
+  transition: background-color 0.2s ease;
   pointer-events: none;
+}
+
+.card:hover::after {
+  background-color: rgba(0,0,0,0.3);
 }
 
 .card:hover {
@@ -163,20 +173,20 @@ button:focus-visible {
 }
 
 .edit-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  height: 1.5rem;
+  aspect-ratio: 1/1;
 }
 
 .add-btn {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background-color: #6366f1;
+  background-color: #0a63e7;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,4 +202,82 @@ button:focus-visible {
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+}
+
+.home-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: #2a2476;
+}
+
+.home-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("https://images.pexels.com/photos/207529/pexels-photo-207529.jpeg");
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.creator-form {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input, textarea {
+  border: 0.1rem solid rgb(112, 112, 112);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  width: 50vw;
+  margin-bottom: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus{
+  border: 0.2rem solid rgb(61, 61, 61);
+}
+
+.navbar {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+button[type="submit"] {
+  display: block;
+  margin-bottom: 1rem;
+
+}
+
+.picture {
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1 rem rgba(0,0,0,0.5);
+  margin-bottom: 1rem;
+  border: 0.1rem solid rgb(64, 64, 64);
+}
+
+.profile-picture {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.full-picture {
+  width: 30vw;
 }

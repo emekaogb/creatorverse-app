@@ -3,7 +3,7 @@ import editIcon from "../assets/edit.png";
 import defaultImg from "../assets/default image.png";
 
 function Card({ creator }) {
-    const { name, description, url, imageURL } = creator;
+    const { name, /*description, */ url, imageURL } = creator;
 
     return (
         <div className="card" style={{backgroundImage: imageURL ? `url(${imageURL})` : `url(${defaultImg})`}}>

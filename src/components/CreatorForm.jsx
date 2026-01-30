@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../client";
+import defaultImg from "../assets/default image.png"
 
 function CreatorForm({ creator }) {
     const navigate = useNavigate();
@@ -60,15 +61,21 @@ function CreatorForm({ creator }) {
 
     return (
         <div className="creator-form">
-            <h2>{creator ? "Edit Creator" : "Add Creator"}</h2>
+            {/*<h2>{creator ? "Edit Creator" : "Add Creator"}</h2>*/}
             <form onSubmit={handleSubmit}>
+                <img 
+                    className="picture profile-picture"
+                    src={imageURL || defaultImg}
+                    alt={name}
+                    width={300}
+                />
                 <input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required/>
                 <input placeholder="URL" value={url} onChange={(e) => setUrl(e.target.value)} required/>
-                <input placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} required/>
-                <input placeholder="Image URL" value={imageURL} onChange={(e) => setImageURL(e.target.value)} />
-
+                <textarea placeholder="Description..." value={description} onChange={(e) => setDescription(e.target.value)} required />
+                <input placeholder="Image URL (optional)" value={imageURL} onChange={(e) => setImageURL(e.target.value)} />
+                
                 <button type="submit">{creator ? "Update" : "Add"} Creator</button>
-                {creator && <button onClick={handleDelete}>Delete</button>}
+                {creator && <button onClick={handleDelete}>Delete Creator</button>}
             </form>
         </div>
     )

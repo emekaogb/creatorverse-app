@@ -27,7 +27,7 @@ function Home() {
   if (!creators.length) return <p>Loading...</p>;
 
   return (
-    <>
+    <div className="home-wrapper">
       <div className='card-container'>
         {creators.map((c) => (
           <Card key={c.name} creator={c} />
@@ -39,7 +39,7 @@ function Home() {
           <button className="add-btn">Add</button>
         </Link>
       </div>
-    </>
+    </div>
   )
 }
 

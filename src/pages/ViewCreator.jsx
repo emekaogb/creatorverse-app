@@ -17,7 +17,8 @@ function ViewCreator() {
             <h2>{creator.name}</h2>
 
             <img
-                src={creator.imageURL}
+                className="picture full-picture"
+                src={creator.imageURL }
                 alt={creator.name}
                 width={300}
             />
