@@ -36,7 +36,7 @@ function CreatorForm({ creator }) {
                 return;
             }
         }
-        navigate("/")
+        navigate("/#creators")
     }
 
     async function handleDelete() {
@@ -56,7 +56,7 @@ function CreatorForm({ creator }) {
             return;
         }
 
-        navigate("/");
+        navigate("/#creators");
     }
 
     return (

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "../client";
 import { Link, useLocation } from "react-router-dom";
 import Card from "../components/Card";
-import Landing from "./Landing";
+import Landing from "../components/Landing";
 import addIcon from "../assets/add_icon.png";
 
 function Home() {
@@ -45,14 +45,8 @@ function Home() {
 
   /* Scroll to creators if hashed in the link (returning from viewing a single creator) */
   useEffect(() => {
-    if (location.hash && creators.length > 0) {
-      setTimeout(() => {
-        const element = document.querySelector(location.hash);
-
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 50);
+    if (creators.length > 0 && location.hash) {
+      document.querySelector(location.hash)?.scrollIntoView();
     }
   }, [location.hash, creators]);
 

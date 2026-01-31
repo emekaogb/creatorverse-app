@@ -16,7 +16,7 @@ function Card({ creator }) {
             <Link to={`/edit/${name}`} state={{creator}} className="edit-link-wrapper">
                 <button className="card-edit-btn"><img src={editIcon} className="edit-icon"/></button>
             </Link>
-            {url && <a href={url} className="card-link"><img src={externalLink} className="visit-icon"/></a>}
+            {url && <a href={url} className="card-link" target="_blank" rel="noopener noreferrer"><img src={externalLink} className="visit-icon" /></a>}
         </div>
     );
 }

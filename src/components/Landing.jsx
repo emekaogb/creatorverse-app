@@ -1,4 +1,4 @@
-import Home from "./Home";
+import Home from "../pages/Home";
 import downIcon from "../assets/down-arrow.png";
 
 function Landing() {
