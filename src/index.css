@@ -44,7 +44,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #262626;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -155,6 +155,10 @@ button:focus-visible {
 .card-title {
   font-size: 2rem;
   text-shadow: 0 0.2rem 0.3rem rgba(102, 102, 102, 0.2);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .card-edit-btn, .card-link {

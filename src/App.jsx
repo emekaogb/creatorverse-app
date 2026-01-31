@@ -12,7 +12,7 @@ function AppRoutes() {
     {path: '/', element: <Home />},
     {path: '/add', element: <AddCreator />},
     {path: '/edit/:name', element: <EditCreator />},
-    {path: 'view/:name', element: <ViewCreator />},
+    {path: '/view/:name', element: <ViewCreator />},
   ])
 
   return routes
