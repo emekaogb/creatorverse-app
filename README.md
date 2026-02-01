@@ -38,7 +38,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented required features:
 
 <!-- <img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' /> -->
-[![Watch the demo](https://img.youtube.com/vi/-yWP69NCQOI/maxresdefault.jpg)](https://www.youtube.com/watch?v=-yWP69NCQOI)
+[![Watch the demo](https://img.youtube.com/vi/-yWP69NCQOI/mqdefault.jpg)](https://www.youtube.com/watch?v=-yWP69NCQOI)
 
 <!-- Replace this with whatever GIF tool you used! -->
 Video created with Kap
