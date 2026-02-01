@@ -37,10 +37,14 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='./src/assets/creatorverse.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<!-- <img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' /> -->
+<video width="600" controls title="Video Walkthrough">
+    <source src="./src/assets/creatorverse video.mp4">
+    Browser does not support the video tag.
+</video>
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with Kap
+Video created with Kap
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
