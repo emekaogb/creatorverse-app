@@ -38,10 +38,12 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented required features:
 
 <!-- <img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' /> -->
-<video width="600" controls title="Video Walkthrough">
-    <source src="./src/assets/creatorverse video.mp4">
-    Browser does not support the video tag.
-</video>
+<iframe width="600" height="350"
+  src="https://www.youtube.com/embed/-yWP69NCQOI"
+  title="Video Walkthrough"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
 
 <!-- Replace this with whatever GIF tool you used! -->
 Video created with Kap
