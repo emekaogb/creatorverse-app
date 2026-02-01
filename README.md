@@ -38,12 +38,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented required features:
 
 <!-- <img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' /> -->
-<iframe width="600" height="350"
-  src="https://www.youtube.com/embed/-yWP69NCQOI"
-  title="Video Walkthrough"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
+[![Watch the demo](https://img.youtube.com/vi/-yWP69NCQOI/maxresdefault.jpg)](https://www.youtube.com/watch?v=-yWP69NCQOI)
 
 <!-- Replace this with whatever GIF tool you used! -->
 Video created with Kap
